@@ -14,7 +14,7 @@ public class EmployeeWage {
 		int totalHour=0;
 		int totalworkingDays=0;
 		
-		while(totalHour<100 && totalworkingDays<20)
+		while(totalHour<Max_working_Hour && totalworkingDays<No_Of_Working_Days)
 		{
 		      int empCheck=(int)(Math.floor(Math.random()*10)%3);
 		      totalworkingDays++;
