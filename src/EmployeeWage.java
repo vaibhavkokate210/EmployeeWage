@@ -5,17 +5,19 @@ public class EmployeeWage {
 	public static final int is_Full_Time=1;
 	public static final int Emp_Rate_Per_Hour=20;
 	public static final int No_Of_Working_Days=20;
+	public static final int Max_working_Hour=100;
 	
 	public static void main(String[] args) 
 	{
 		int empHour=0;
-		int empWage=0;
 		int totalWage=0;
+		int totalHour=0;
+		int totalworkingDays=0;
 		
-		for(int i=0;i<No_Of_Working_Days;i++)
+		while(totalHour<100 && totalworkingDays<20)
 		{
 		      int empCheck=(int)(Math.floor(Math.random()*10)%3);
-		
+		      totalworkingDays++;
 		      switch(empCheck)
 		      {
 		            case is_Full_Time:empHour=8;
@@ -27,9 +29,10 @@ public class EmployeeWage {
 		            default:empHour=0;
 		      }
 		
-		     empWage=empHour*Emp_Rate_Per_Hour;
-		     totalWage=totalWage+empWage;
+	         totalHour+=empHour;
+	         System.out.println("Day = "+totalworkingDays+ "  Hour = "+empHour);
 		}
+		totalWage=totalHour*Emp_Rate_Per_Hour;
 		System.out.println("Employee Total Wage = "+totalWage);
 		   
 	}
