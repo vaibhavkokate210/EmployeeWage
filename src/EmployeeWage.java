@@ -7,7 +7,7 @@ public class EmployeeWage {
 	public static final int No_Of_Working_Days=20;
 	public static final int Max_working_Hour=100;
 	
-	public static void main(String[] args) 
+	public static int calculateEmployeeWage()
 	{
 		int empHour=0;
 		int totalWage=0;
@@ -32,9 +32,13 @@ public class EmployeeWage {
 	         totalHour+=empHour;
 	         System.out.println("Day = "+totalworkingDays+ "  Hour = "+empHour);
 		}
-		totalWage=totalHour*Emp_Rate_Per_Hour;
+		return (totalWage=totalHour*Emp_Rate_Per_Hour);
+		
+	}
+	public static void main(String[] args) 
+	{
+		int totalWage=calculateEmployeeWage();
 		System.out.println("Employee Total Wage = "+totalWage);
-		   
 	}
 
 }
