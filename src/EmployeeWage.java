@@ -1,20 +1,17 @@
 
-public class EmployeeWage {
-
+public class EmployeeWage 
+{
 	public static final int is_Part_Time=2;
 	public static final int is_Full_Time=1;
-	public static final int Emp_Rate_Per_Hour=20;
-	public static final int No_Of_Working_Days=20;
-	public static final int Max_working_Hour=100;
 	
-	public static int calculateEmployeeWage()
+	public static void calculateEmployeeWage(String company,int empRatePerHour,int noOfWorkingDays,int maxWorkingHour)
 	{
 		int empHour=0;
 		int totalWage=0;
 		int totalHour=0;
 		int totalworkingDays=0;
 		
-		while(totalHour<Max_working_Hour && totalworkingDays<No_Of_Working_Days)
+		while(totalHour<maxWorkingHour && totalworkingDays<noOfWorkingDays)
 		{
 		      int empCheck=(int)(Math.floor(Math.random()*10)%3);
 		      totalworkingDays++;
@@ -30,15 +27,15 @@ public class EmployeeWage {
 		      }
 		
 	         totalHour+=empHour;
-	         System.out.println("Day = "+totalworkingDays+ "  Hour = "+empHour);
 		}
-		return (totalWage=totalHour*Emp_Rate_Per_Hour);
+		System.out.println("Total Employee wages for company "+company+" = "+(totalWage=totalHour*empRatePerHour));
 		
 	}
 	public static void main(String[] args) 
 	{
-		int totalWage=calculateEmployeeWage();
-		System.out.println("Employee Total Wage = "+totalWage);
+		calculateEmployeeWage("TCS",10,22,200);
+		calculateEmployeeWage("Amazon",30,20,100);
+		calculateEmployeeWage("Accenture",15,22,200);
 	}
 
 }
